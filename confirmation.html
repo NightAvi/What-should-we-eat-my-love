@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation - What To Eat</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdfdfd;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ff66b2;
+        }
+
+        .confirmation-message {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+
+        .contact-info a {
+            color: #ff66b2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-button {
+            background-color: #ff66b2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #ff3399;
+        }
+    </style>
+</head>
+<body>
+    <h1>You're Almost There!</h1>
+    <div class="confirmation-message">
+        <p>Thank you for selecting your perfect meal idea!</p>
+        <p>Your choice: <span id="chosen-food"></span></p>
+        <p>If you're happy with it, click below to confirm your choice and get in touch with me.</p>
+    </div>
+    
+    <div class="contact-info">
+        <p>Contact me to finalize everything: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+    </div>
+
+    <button class="back-button" onclick="window.history.back()">Back to Food Choices</button>
+</body>
+</html>
