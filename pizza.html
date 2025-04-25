@@ -11,7 +11,11 @@
     <h2>You melt my heart like mozzarella 🧀</h2>
     <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Cute Pizza" style="max-width: 300px; display:block; margin:20px auto; border-radius: 20px;">
     <p style="text-align: center; color: #ff66a3;">Let’s grab a slice and a smile 😘</p>
-
+ <!-- Buttons for pizza choices -->
+    <button onclick="saveChoice('Pizza Margherita')">Pizza Margherita</button>
+    <button onclick="saveChoice('Pepperoni Pizza')">Pepperoni Pizza</button>
+    <button onclick="saveChoice('Vegetarian Pizza')">Vegetarian Pizza</button> 
+    
     <div class="idea-input">
       <textarea placeholder="Wanna add your own topping idea? 🍄🍍🍕"></textarea>
       <button>Add Topping</button>
@@ -28,5 +32,12 @@
   <!-- Floating bunnies and frogs -->
   <img src="https://media.giphy.com/media/xT5LMXCdvK7H7YFs8k/giphy.gif" class="floater bunny" alt="Bunny">
   <img src="https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif" class="floater frog" alt="Frog">
+  <script>
+    function saveChoice(choice) {
+      // Save the selected pizza choice in localStorage
+      localStorage.setItem('chosenCategory', 'Pizza');  // Store the category
+      localStorage.setItem('chosenIdea', choice);       // Store the pizza choice
+    }
+  </script>
 </body>
 </html>
