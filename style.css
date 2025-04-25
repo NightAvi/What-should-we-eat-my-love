@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+  background: linear-gradient(to bottom, #ffeaf4, #ffe4f0);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #ff66a3;
+  text-shadow: 2px 2px #fff0f5;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #fff0f5;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  border: 2px dashed #ffaad4;
+  animation: floatCard 2s infinite ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #ffe1ef;
+}
+
+.card img {
+  max-width: 100%;
+  height: 100px;
+  object-fit: contain;
+}
+
+.card p {
+  font-size: 14px;
+  color: #ff4081;
+  margin-top: 5px;
+}
+
+/* Floating Animals */
+.floater {
+  position: absolute;
+  width: 50px;
+  animation: floatUp 10s linear infinite;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.floater.bunny {
+  left: 5%;
+  animation-delay: 0s;
+}
+.floater.frog {
+  right: 10%;
+  animation-delay: 3s;
+}
+
+@keyframes floatUp {
+  0% { bottom: -60px; transform: rotate(0deg); }
+  100% { bottom: 110%; transform: rotate(360deg); }
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Button */
+button {
+  display: block;
+  margin: 30px auto;
+  padding: 10px 25px;
+  font-size: 16px;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #ff85c1;
+}
+
+/* Custom Idea Box */
+.idea-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+}
+
+.idea-input textarea {
+  width: 80%;
+  height: 60px;
+  border-radius: 12px;
+  border: 2px dashed #ffaadd;
+  padding: 10px;
+  font-size: 14px;
+  resize: none;
+}
+
+.idea-input button {
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
