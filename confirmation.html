@@ -62,5 +62,18 @@
     </div>
 
     <button class="back-button" onclick="window.history.back()">Back to Food Choices</button>
+<script>
+        // Retrieve the saved choice from localStorage and display it
+        const category = localStorage.getItem("chosenCategory");
+        const idea = localStorage.getItem("chosenIdea");
+        const displayText = idea ? `${category} — "${idea}"` : category;
+
+        document.getElementById("chosen-food").textContent = displayText;
+
+        // Optionally, you could also send an email or an SMS here using a backend service
+        // Here is a basic way to link to an email service for demonstration:
+        // Example for email link: 
+        // window.location.href = `mailto:your_email@example.com?subject=Meal Choice&body=User%20chose%20${displayText}`;
+    </script>
 </body>
 </html>
