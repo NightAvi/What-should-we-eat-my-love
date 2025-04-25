@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>What to Eat, My Love 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px;
+      font-size: 2.5rem;
+      color: #ff69b4;
+      text-shadow: 2px 2px white;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff0f5;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      max-height: 150px;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      margin: 10px 0 5px;
+      font-size: 1.4rem;
+      color: #d63384;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .input-idea {
+      margin: 30px auto;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .input-idea input {
+      padding: 10px;
+      width: 80%;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Floating animals */
+    .floating {
+      position: absolute;
+      animation: float 6s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .floating img {
+      width: 50px;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .floating1 { top: 10%; left: 5%; animation-delay: 0s; }
+    .floating2 { top: 40%; left: 80%; animation-delay: 2s; }
+    .floating3 { top: 70%; left: 20%; animation-delay: 4s; }
+  </style>
+</head>
+<body>
+
+  <h1>Hey baby 💕 What should we eat today?</h1>
+
+  <!-- Animal decorations -->
+  <div class="floating floating1"><img src="https://i.imgur.com/Y0JwFTw.png" alt="bunny"></div>
+  <div class="floating floating2"><img src="https://i.imgur.com/1g6wAfz.png" alt="frog"></div>
+  <div class="floating floating3"><img src="https://i.imgur.com/Y0JwFTw.png" alt="bunny"></div>
+
+  <div class="card-container">
+    <div class="card" onclick="location.href='burgers.html'">
+      <img src="https://i.imgur.com/RuXU7ES.jpg" alt="Burgers">
+      <h2>Burgers</h2>
+      <p>Because you're the only snack I need 😘</p>
+    </div>
+    <div class="card" onclick="location.href='pizza.html'">
+      <img src="https://i.imgur.com/VNopklV.jpg" alt="Pizza">
+      <h2>Pizza</h2>
+      <p>You’ve got a pizza my heart 🍕💘</p>
+    </div>
+    <div class="card" onclick="location.href='mexican.html'">
+      <img src="https://i.imgur.com/zNZBcyT.jpg" alt="Mexican">
+      <h2>Mexican</h2>
+      <p>Let’s taco ‘bout how cute you are 🌮😍</p>
+    </div>
+    <div class="card" onclick="location.href='korean.html'">
+      <img src="https://i.imgur.com/WudTchD.jpg" alt="Korean">
+      <h2>Korean</h2>
+      <p>You make my heart go bulgogi ❤️‍🔥</p>
+    </div>
+    <div class="card" onclick="location.href='fastfood.html'">
+      <img src="https://i.imgur.com/Jkl9JvO.jpg" alt="Fast Food">
+      <h2>Fast Food</h2>
+      <p>Quick bite or quick kiss? 😘🍔</p>
+    </div>
+    <div class="card" onclick="location.href='fancy.html'">
+      <img src="https://i.imgur.com/LrxI1Rs.jpg" alt="Fancy">
+      <h2>Fancier Places</h2>
+      <p>Only the best for my love 💅✨</p>
+    </div>
+    <div class="card" onclick="location.href='wings.html'">
+      <img src="https://i.imgur.com/AvkJ6nT.jpg" alt="Wings">
+      <h2>Wings</h2>
+      <p>You give me wings… and cravings 🐔💓</p>
+    </div>
+    <div class="card" onclick="location.href='steakhouse.html'">
+      <img src="https://i.imgur.com/qOMkm9S.jpg" alt="Steak">
+      <h2>Steakhouse</h2>
+      <p>Rare love, well done dates 🥩❤️</p>
+    </div>
+    <div class="card" onclick="location.href='italian.html'">
+      <img src="https://i.imgur.com/qYXuRRA.jpg" alt="Italian">
+      <h2>Italian</h2>
+      <p>Let’s pasta time together 🍝💕</p>
+    </div>
+    <div class="card" onclick="location.href='seafood.html'">
+      <img src="https://i.imgur.com/jMvbrKZ.jpg" alt="Seafood">
+      <h2>Seafood</h2>
+      <p>You’re the only fish in the sea for me 🐟💘</p>
+    </div>
+    <div class="card" onclick="location.href='surprise.html'">
+      <img src="https://i.imgur.com/S5zH7dB.jpg" alt="Surprise Me">
+      <h2>Surprise Me!</h2>
+      <p>I'm down for anything with you 🎁💖</p>
+    </div>
+  </div>
+
+  <div class="input-idea">
+    <input type="text" placeholder="Or suggest your own idea, cutie 💭">
+  </div>
+
+</body>
+</html>
