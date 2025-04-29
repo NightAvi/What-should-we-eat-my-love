@@ -11,16 +11,25 @@
     <h2>You melt my heart like mozzarella 🧀</h2>
     <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Cute Pizza" style="max-width: 300px; display:block; margin:20px auto; border-radius: 20px;">
     <p style="text-align: center; color: #ff66a3;">Let’s grab a slice and a smile 😘</p>
- <!-- Buttons for pizza choices -->
-    <button onclick="saveChoice('Pizza Margherita')">Pizza Margherita</button>
-    <button onclick="saveChoice('Pepperoni Pizza')">Pepperoni Pizza</button>
-    <button onclick="saveChoice('Vegetarian Pizza')">Vegetarian Pizza</button> 
-    
-    <div class="idea-input">
-      <textarea placeholder="Wanna add your own topping idea? 🍄🍍🍕"></textarea>
-      <button>Add Topping</button>
+  <!-- List of places -->
+    <div class="places">
+      <button onclick="saveChoice('Pizzeria Uno')">Pizzeria Uno</button>
+      <button onclick="saveChoice('Domino\'s Pizza')">Domino\'s Pizza</button>
+      <button onclick="saveChoice('Papa John\'s')">Papa John\'s</button>
+      <button onclick="saveChoice('Little Caesars')">Little Caesars</button>
     </div>
-
+    
+    <!-- Textarea for typing custom place -->
+    <div class="idea-input">
+      <textarea id="customPlace" placeholder="Type your own pizza place here 🍕"></textarea>
+      <button onclick="saveCustomChoice()">Add Your Own Place</button>
+    </div>
+<!-- Button to confirm the choice and go to confirmation page -->
+    <a href="confirmation.html">
+      <button>Confirm Your Choice</button>
+    </a>
+  </div>
+  
     <a href="index.html">
       <button>← Back to Menu</button>
     </a>
@@ -33,10 +42,22 @@
   <img src="https://media.giphy.com/media/xT5LMXCdvK7H7YFs8k/giphy.gif" class="floater bunny" alt="Bunny">
   <img src="https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif" class="floater frog" alt="Frog">
   <script>
-    function saveChoice(choice) {
-      // Save the selected pizza choice in localStorage
-      localStorage.setItem('chosenCategory', 'Pizza');  // Store the category
-      localStorage.setItem('chosenIdea', choice);       // Store the pizza choice
+    
+   <!-- Script to save the pizza choice using localStorage -->
+  <script>
+    // Function to save the selected place choice from buttons
+    function saveChoice(place) {
+      localStorage.setItem('chosenCategory', 'Pizza Place');  // Store the category
+      localStorage.setItem('chosenIdea', place);              // Store the selected place
+    }
+
+    // Function to save the custom place typed in the textarea
+    function saveCustomChoice() {
+      var customPlace = document.getElementById('customPlace').value;
+      if(customPlace) {
+        localStorage.setItem('chosenCategory', 'Custom Pizza Place');  // Store the category
+        localStorage.setItem('chosenIdea', customPlace);               // Store the custom place
+      }
     }
   </script>
 </body>
