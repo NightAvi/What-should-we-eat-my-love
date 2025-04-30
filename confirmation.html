@@ -52,13 +52,13 @@
 <body>
     <h1>You're Almost There!</h1>
     <div class="confirmation-message">
-        <p>Thank you for selecting your perfect meal idea!</p>
+        <p>Thank you for selecting your perfect date night!</p>
         <p>Your choice: <span id="chosen-food"></span></p>
         <p>If you're happy with it, click below to confirm your choice and get in touch with me.</p>
     </div>
     
     <div class="contact-info">
-        <p>Contact me to finalize everything: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        <p>Call or Text me to finalize plans bae: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
     </div>
 
     <button class="back-button" onclick="window.history.back()">Back to Food Choices</button>
@@ -66,14 +66,19 @@
         // Retrieve the saved choice from localStorage and display it
         const category = localStorage.getItem("chosenCategory");
         const idea = localStorage.getItem("chosenIdea");
-        const displayText = idea ? `${category} — "${idea}"` : category;
-
+               // Display the selected category and idea in the confirmation page
+        document.getElementById('chosen-food').textContent = `${category}: ${choice}`;
+// Update the page with the user's choice
         document.getElementById("chosen-food").textContent = displayText;
-
+        document.getElementById("chosen-food").textContent = displayText;
+// Optionally, you could add additional logic here to handle errors or empty selections
+        if (!category || !choice) {
+            document.getElementById('chosen-food').textContent = "No choice selected. Please go back and make a selection.";
         // Optionally, you could also send an email or an SMS here using a backend service
         // Here is a basic way to link to an email service for demonstration:
         // Example for email link: 
         // window.location.href = `mailto:your_email@example.com?subject=Meal Choice&body=User%20chose%20${displayText}`;
+   }
     </script>
 </body>
 </html>
