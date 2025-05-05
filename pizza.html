@@ -33,23 +33,20 @@
     <a href="index.html">
       <button>← Back to Menu</button>
     </a>
-    <a href="pizza-choice.html">
-  <button>Choose this one</button>
-</a>
-  </div>
+    
+ 
 
   <!-- Floating bunnies and frogs -->
   <img src="https://i.imgur.com/b5ttn69.gif" class="floater bunny" alt="Bunny">
   <img src="https://i.imgur.com/A6Q2vtN.gif" class="floater frog" alt="Frog">
   <script>
     
-   <!-- Script to save the pizza choice using localStorage -->
-  <script>
+   
     // Function to save the selected place choice from buttons
     function saveChoice(place) {
       localStorage.setItem('chosenCategory', 'Pizza Place');  // Store the category
       localStorage.setItem('chosenIdea', place);              // Store the selected place
-   console.log('Saved choice:', choice);
+   console.log('Saved choice:', place);
     }
 
     // Function to save the custom place typed in the textarea
