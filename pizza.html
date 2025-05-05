@@ -51,10 +51,13 @@
 
     // Function to save the custom place typed in the textarea
     function saveCustomChoice() {
-      var customPlace = document.getElementById('customPlace').value;
+      var customPlace = document.getElementById('customPlace').value.trim();
       if(customPlace) {
         localStorage.setItem('chosenCategory', 'Custom Pizza Place');  // Store the category
-        localStorage.setItem('chosenIdea', customPlace);               // Store the custom place
+        localStorage.setItem('chosenIdea', customPlace);  // Store the custom place
+        console.log('Saved custom place:', customPlace);
+      } else {
+        alert('Please enter a pizza place!');
       }
     }
   </script>
