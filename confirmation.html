@@ -67,13 +67,14 @@
         const category = localStorage.getItem("chosenCategory");
         const idea = localStorage.getItem("chosenIdea");
                // Display the selected category and idea in the confirmation page
-        document.getElementById('chosen-food').textContent = `${category}: ${choice}`;
+        document.getElementById('chosen-food').textContent = `${category}: ${idea}`;
 // Update the page with the user's choice
-        document.getElementById("chosen-food").textContent = displayText;
-        document.getElementById("chosen-food").textContent = displayText;
+       
 // Optionally, you could add additional logic here to handle errors or empty selections
         if (!category || !choice) {
             document.getElementById('chosen-food').textContent = "No choice selected. Please go back and make a selection.";
+            } else {
+    document.getElementById('chosen-food').textContent = `${category}: ${idea}`;
         // Optionally, you could also send an email or an SMS here using a backend service
         // Here is a basic way to link to an email service for demonstration:
         // Example for email link: 
