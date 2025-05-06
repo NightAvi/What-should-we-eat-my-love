@@ -11,22 +11,53 @@
     <h2>You're the guacamole to my chips! 🥑💚</h2>
     <img src="https://i.imgur.com/i4p87pQ.gif" alt="Cute Mexican food" style="max-width: 300px; display:block; margin:20px auto; border-radius: 20px;">
     <p style="text-align: center; color: #ff3366;">Let’s taco 'bout love! 🌮❤️</p>
-
+<!-- List of places -->
+    <div class="places">
+      <button onclick="saveChoice('L & J Cafe')">L & J Cafe</button>
+      <button onclick="saveChoice('Del Paso Mexican Restaurant')">Del Paso Mexican Restaurant</button>
+      <button onclick="saveChoice('Kiki's Mexican Restaurant')">Kiki's Mexican Restaurant</button>
+      <button onclick="saveChoice('Morra Mia')">Morra Mia</button>
+       <button onclick="saveChoice('Las Palmas Mexican Restaurant & Bar')">Las Palmas Mexican Restaurant & Bar</button>
+       <button onclick="saveChoice('Barrio Eats & Drinks')">Barrio Eats & Drinks</button>
+    </div>
     <div class="idea-input">
       <textarea placeholder="Add your own Mexican food idea! 🌯🥑"></textarea>
-      <button>Add Idea</button>
+      <button onclick="saveCustomChoice()">Add Your Own Place</button>
     </div>
-
+<!-- Button to confirm the choice and go to confirmation page -->
+    <a href="confirmation.html">
+      <button>Confirm Your Choice</button>
+    </a>
+  </div>
     <a href="index.html">
       <button>← Back to Menu</button>
     </a>
-    <a href="mexican-choice.html">
-  <button>Choose this one</button>
-</a>
-  </div>
+   
 
   <!-- Floating bunnies and frogs -->
   <img src="https://i.imgur.com/b5ttn69.gif" class="floater bunny" alt="Bunny">
   <img src="https://i.imgur.com/A6Q2vtN.gif" class="floater frog" alt="Frog">
+  <script>
+    
+   
+    // Function to save the selected place choice from buttons
+    function saveChoice(place) {
+      localStorage.setItem('chosenCategory', 'Pizza Place');  // Store the category
+      localStorage.setItem('chosenIdea', place);              // Store the selected place
+   console.log('Saved choice:', place);
+    }
+
+    // Function to save the custom place typed in the textarea
+    function saveCustomChoice() {
+      var customPlace = document.getElementById('customPlace').value.trim();
+      if(customPlace) {
+        localStorage.setItem('chosenCategory', 'Custom Pizza Place');  // Store the category
+        localStorage.setItem('chosenIdea', customPlace);  // Store the custom place
+        console.log('Saved custom place:', customPlace);
+      } else {
+        alert('Please enter a pizza place!');
+      }
+    }
+  </script>
 </body>
 </html>
