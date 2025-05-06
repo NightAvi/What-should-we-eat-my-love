@@ -42,7 +42,7 @@
    
     // Function to save the selected place choice from buttons
     function saveChoice(place) {
-      localStorage.setItem('chosenCategory', 'Pizza Place');  // Store the category
+      localStorage.setItem('chosenCategory', 'Mexican Place');  // Store the category
       localStorage.setItem('chosenIdea', place);              // Store the selected place
    console.log('Saved choice:', place);
     }
@@ -51,11 +51,11 @@
     function saveCustomChoice() {
       var customPlace = document.getElementById('customPlace').value.trim();
       if(customPlace) {
-        localStorage.setItem('chosenCategory', 'Custom Pizza Place');  // Store the category
+        localStorage.setItem('chosenCategory', 'Custom Mexican Place');  // Store the category
         localStorage.setItem('chosenIdea', customPlace);  // Store the custom place
         console.log('Saved custom place:', customPlace);
       } else {
-        alert('Please enter a pizza place!');
+        alert('Please enter a mexican place!');
       }
     }
   </script>
