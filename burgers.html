@@ -37,10 +37,10 @@
   <!-- Floating bunnies and frogs -->
   <img src="https://i.imgur.com/b5ttn69.gif" class="floater bunny" alt="Bunny">
   <img src="https://i.imgur.com/A6Q2vtN.gif" class="floater frog" alt="Frog">
-  
+   <script>
   // Function to save the selected place choice from buttons
     function saveChoice(place) {
-      localStorage.setItem('chosenCategory', 'Pizza Place');  // Store the category
+      localStorage.setItem('chosenCategory', 'Burger Place');  // Store the category
       localStorage.setItem('chosenIdea', place);              // Store the selected place
    console.log('Saved choice:', place);
     }
@@ -49,11 +49,11 @@
     function saveCustomChoice() {
       var customPlace = document.getElementById('customPlace').value.trim();
       if(customPlace) {
-        localStorage.setItem('chosenCategory', 'Custom Pizza Place');  // Store the category
+        localStorage.setItem('chosenCategory', 'Custom Burger Place');  // Store the category
         localStorage.setItem('chosenIdea', customPlace);  // Store the custom place
         console.log('Saved custom place:', customPlace);
       } else {
-        alert('Please enter a pizza place!');
+        alert('Please enter a burger place!');
       }
     }
 </body>
