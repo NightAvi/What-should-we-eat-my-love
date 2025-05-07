@@ -167,12 +167,32 @@
   </div>
 
   <div class="input-idea">
-    <input type="text" placeholder="Or suggest your own idea, cutie 💭">
+    <input type="text" id="ideaInput" placeholder="Or suggest your own idea, cutie 💭">
+    <button onclick="submitIdea()">Add</button>
   </div>
-<div class="idea-input">
-      <textarea id="customPlace" placeholder="Or suggest your own idea, cutie 💭"></textarea>
-      <button onclick="saveCustomChoice()">Add Idea</button>
-    </div>
+<script>
+  function submitIdea() {
+    const idea = document.getElementById("ideaInput").value.trim();
+    if (!idea) {
+      alert("Please type your idea first 💭");
+      return;
+    }
+
+    const confirmAdd = confirm(`Are you sure you want to suggest:\n"${idea}"?`);
+    if (confirmAdd) {
+      // Optional: pass the idea to the next page using query params
+      window.location.href = `confirm.html?idea=${encodeURIComponent(idea)}`;
+    }
+  }
+</script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const idea = params.get('idea');
+  if (idea) {
+    document.write(`<h2>You suggested: "${idea}" 💖</h2>`);
+  }
+</script>
+
 
 </body>
 </html>
