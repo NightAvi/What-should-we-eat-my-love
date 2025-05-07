@@ -6,22 +6,6 @@
   <link rel="stylesheet" href="style.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-<script>
-  function submitIdea() {
-    const input = document.getElementById('ideaInput').value.trim();
-    if (!input) {
-      alert("Please type an idea first 💡");
-      return;
-    }
-
-    const confirmAdd = confirm(`Are you sure you want to add this idea?\n"${input}"`);
-    if (confirmAdd) {
-      alert(`Idea added: "${input}" 💖\nThanks for the suggestion!`);
-      document.getElementById('ideaInput').value = ''; // Clear the input
-      // Optionally: Save to localStorage or send to a server here
-    }
-  }
-</script>
 
     body {
       margin: 0;
