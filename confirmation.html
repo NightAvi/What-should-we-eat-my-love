@@ -84,18 +84,12 @@
         // Alternate: SMS (only works on phones)
         const smsLink = `sms:+19154910500?body=${encodeURIComponent(message)}`;
         // Check if we can trigger SMS or Email based on the device
-        
-                title: 'Date Night Choice',
-                text: message,
-                url: smsLink
-            }).catch((error) => console.error('Error sharing:', error));
-        } else {
-            // Open SMS if available, else email
-            window.location.href =emailLink; // For SMS
-            // Uncomment below for email fallback
-            // window.location.href = emailLink; // For Email
-        }
-    });
+        const message = `She picked: ${category} - ${idea}`;
+    }
+            // This line opens the user's default mail client
+            const emailLink = `mailto:nighttheinsight@gmail.com?subject=Date%20Night%20Choice&body=${encodeURIComponent(message)}`;
+            window.location.href = emailLink;
+        });
     </script>
      <script>
     // Function to get URL parameter
