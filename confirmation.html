@@ -68,15 +68,11 @@
         const category = localStorage.getItem("chosenCategory");
         const idea = localStorage.getItem("chosenIdea");
                // Display the selected category and idea in the confirmation page
-        document.getElementById('chosen-food').textContent = `${category}: ${idea}`;
+    document.getElementById('chosen-food').textContent = `${category}: ${idea}`;
 // Update the page with the user's choice
        
 // Optionally, you could add additional logic here to handle errors or empty selections
-        if (!category || !choice) {
-            document.getElementById('chosen-food').textContent = "No choice selected. Please go back and make a selection.";
-            } else {
-    document.getElementById('chosen-food').textContent = `${category}: ${idea}`;
-    }
+     
 
     // Handle the confirm button click event to send the choice via SMS or email delete from here if not work
     document.getElementById('sendChoice').addEventListener('click', function() {
@@ -85,20 +81,23 @@
         // Send the choice via SMS (using the tel: protocol)
         const smsLink = `sms:+1234567890?body=${encodeURIComponent(message)}`;
         
-        // Open the SMS app (for phones) or email app
+        // If SMS isn't available, email can be used
+        const emailLink = `mailto:your_email@example.com?subject=Meal%20Choice&body=${encodeURIComponent(message)}`;
+
+        // Check if we can trigger SMS or Email based on the device
         if (navigator.share) {
-            // If device supports "navigator.share" (like a mobile device), we can try that.
             navigator.share({
                 title: 'Date Night Choice',
                 text: message,
                 url: smsLink
             }).catch((error) => console.error('Error sharing:', error));
         } else {
-            // Otherwise, open SMS or email manually
+            // Open SMS if available, else email
             window.location.href = smsLink; // For SMS
+            // Uncomment below for email fallback
+            // window.location.href = emailLink; // For Email
         }
-    });    
-   }
+    });
     </script>
      <script>
     // Function to get URL parameter
