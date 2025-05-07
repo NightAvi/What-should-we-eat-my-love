@@ -78,22 +78,20 @@
     document.getElementById('sendChoice').addEventListener('click', function() {
         const message = `User selected: ${category}: ${idea}.`;
 
-        // Send the choice via SMS (using the tel: protocol)
-        const smsLink = `sms:+19154910500?body=${encodeURIComponent(message)}`;
-        
-        // If SMS isn't available, email can be used
-        const emailLink = `mailto:nighttheinsight@gmail.com?subject=Meal%20Choice&body=${encodeURIComponent(message)}`;
+       // Preferred: Email
+        const emailLink = `mailto:nighttheinsight@gmail.com?subject=Date%20Night%20Choice&body=${encodeURIComponent(message)}`;
 
+        // Alternate: SMS (only works on phones)
+        const smsLink = `sms:+19154910500?body=${encodeURIComponent(message)}`;
         // Check if we can trigger SMS or Email based on the device
-        if (navigator.share) {
-            navigator.share({
+        
                 title: 'Date Night Choice',
                 text: message,
                 url: smsLink
             }).catch((error) => console.error('Error sharing:', error));
         } else {
             // Open SMS if available, else email
-            window.location.href = smsLink; // For SMS
+            window.location.href =emailLink; // For SMS
             // Uncomment below for email fallback
             // window.location.href = emailLink; // For Email
         }
