@@ -185,22 +185,9 @@
     }
   }
 </script>
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const idea = params.get('idea');
-  if (idea) {
-    document.write(`<h2>You suggested: "${idea}" 💖</h2>`);
-  }
-</script>
-<script>
-  function submitIdea() {
-    const idea = document.getElementById("ideaInput").value.trim();
 
-    if (!idea) {
-      alert("Please type your idea first 💭");
-      return;
-    }
-
+<script>
+  
     // Redirect to confirmation page and pass the idea as a URL parameter
     window.location.href = `confirm.html?idea=${encodeURIComponent(idea)}`;
   }
