@@ -81,5 +81,18 @@
         // window.location.href = `mailto:your_email@example.com?subject=Meal Choice&body=User%20chose%20${displayText}`;
    }
     </script>
+     <script>
+    // Function to get URL parameter
+    function getIdeaFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("idea");
+    }
+
+    // Get idea and display it
+    const idea = getIdeaFromURL();
+    document.getElementById("ideaText").textContent = idea 
+      ? `"${idea}" has been added.` 
+      : "No idea was found in the URL.";
+  </script>
 </body>
 </html>
